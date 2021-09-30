@@ -1,0 +1,68 @@
+{
+    "medicos": [
+        {
+            "id": 1,
+            "nombre": "Roberto",
+            "apellido": "Bolaños",
+            "fechaNacimiento": "1983-04-03",
+            "especialidad": "Otorinolaringolo",
+            "telefono": "322828392"
+        },
+        {
+            "id": 2,
+            "nombre": "Juan",
+            "apellido": "Bautista",
+            "fechaNacimiento": "1983-04-02",
+            "especialidad": "Oncologo",
+            "telefono": "322828323"
+        },
+        {
+            "id": 3,
+            "nombre": "Alexander",
+            "apellido": "Fleming",
+            "fechaNacimiento": "1982-06-02",
+            "especialidad": "Bacteriologo",
+            "telefono": "322828392"
+        },
+        {
+            "id": 4,
+            "nombre": "Edward",
+            "apellido": "Jenner",
+            "fechaNacimiento": "1973-04-03",
+            "especialidad": "Proctologo",
+            "telefono": "322823392"
+        },
+        {
+            "id": 5,
+            "nombre": "William",
+            "apellido": "Osler",
+            "fechaNacimiento": "1973-09-03",
+            "especialidad": "Medico general",
+            "telefono": "322828392"
+        },
+        {
+            "id": 6,
+            "nombre": "Sigmund",
+            "apellido": "Freud",
+            "fechaNacimiento": "1983-04-03",
+            "especialidad": "Neurologo",
+            "telefono": "23423223"
+        },
+        {
+            "id": 7,
+            "nombre": "Louis",
+            "apellido": "Pasteour",
+            "fechaNacimiento": "1984-09-12",
+            "especialidad": "Oftanmologo",
+            "telefono": "232312821"
+        },
+        {
+            "id": 8,
+            "nombre": "Elizabeth",
+            "apellido": "Blackwell",
+            "fechaNacimiento": "1972-05-17",
+            "especialidad": "Medico general",
+            "telefono": "23423223"
+        }
+    ]
+}
