@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'Slave_induccion'
+        label 'Ceiba-Consultorio(nicolas.martin)'
     }
     
     options {
