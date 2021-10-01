@@ -84,4 +84,5 @@ pipeline {
                 echo 'For example, if the pipeline was previously failing but is now successful'
             }
         }
+    }
 }
