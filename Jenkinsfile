@@ -22,7 +22,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [[$class: 'CleanCheckout']],
                     submoduleCfg: [],
-                    userRemoteConfigs: [[credentialsId: 'git-credentials', url: 'https://github.com/nicodev16/adn-consultorioapp.git']]
+                    userRemoteConfigs: [[credentialsId: 'GitHub_nicodev16', url: 'https://github.com/nicodev16/adn-consultorioapp.git']]
                 ])
             }
         }
