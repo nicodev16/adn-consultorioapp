@@ -1,0 +1,27 @@
+
+<div class="wrapper fadeInDown">
+
+  <p>Login</p>
+
+    <!-- Login Form -->
+    <form class="login" [formGroup]="loginForm" (ngSubmit)="login()">
+      <input
+        type="text"
+        id="login"
+        class="form-control"
+        name="login"
+        placeholder="email"
+        formControlName="email"
+      >
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        name="login"
+        placeholder="password"
+        formControlName="password"
+      >
+      <button type="submit" id="buttonLogin" class="btn btn-primary">Log In</button>
+    </form>
+
+</div>

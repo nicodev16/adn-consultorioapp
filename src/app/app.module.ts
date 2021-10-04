@@ -11,10 +11,11 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
