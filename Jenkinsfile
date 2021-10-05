@@ -73,7 +73,7 @@ pipeline {
                 mail (
                     to: 'nicolas.martin@ceiba.com.co',
                     subject: 'Failed pipeline: ${currentBuild.fullDisplayName}',
-                    body: `${env.build_url} fallo en esta url`)
+                    body: '${env.build_url} fallo en esta url')
             }
 
             unstable {
