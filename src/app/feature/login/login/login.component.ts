@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, Observer } from 'rxjs';
-import { Token } from '../shared/models/token.models';
-// import { Token } from '../shared/models/token.models';
+import { Observable, Observer} from 'rxjs';
+import { Token } from '../shared/models/token';
 import { LoginService } from '../shared/services/login/login.service';
 
 @Component({
@@ -14,15 +13,11 @@ import { LoginService } from '../shared/services/login/login.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  isLogin: Observable<string>;
-  getData: Observer<string>;
+  isLogin: Observable<Token>;
+  loginObserver: Observer<Token>;
 
-  constructor(private loginService: LoginService, private route: Router) {
-    this.getData = {
-      next: (value: string) =>  this.navigateHome(value),
-      error: (error: any) => this.manageError(error),
-      complete: () => this.completeSubscribe()
-    }
+  constructor(private loginService: LoginService,public route: Router) {
+
   }
 
   ngOnInit(): void {
@@ -31,26 +26,33 @@ export class LoginComponent implements OnInit {
 
   public login () {
     this.isLogin = this.loginService.login(this.loginForm.value);
-    this.isLogin.subscribe(this.getData)
+    this.loginObserver = {
+      next: (value: Token): void => this.navigateHome(value),
+      error: (error: any): void =>  this.manageError(error),
+      complete: (): void => this.completeSubscribe()
+    }
+    this.isLogin.subscribe(this.loginObserver)
   }
 
-  navigateProduct () {
-    this.route.navigate(['/producto'])
+  navigateRoute() {
+    this.route.navigate(['/home'])
   }
 
-  navigateHome (value: string): void  {
+  public navigateHome (value: Token): void  {
+
     if(typeof value === 'object'){
-      let token = value as Token;
+      let token = value;
       localStorage.setItem('token', token.accessToken)
-      this.navigateProduct()
+      this.navigateRoute()
     }
   }
 
-  manageError (error: any): void {
+  public manageError (error: any): void {
     console.log(error);
   }
 
-  completeSubscribe (): void  {
+  public completeSubscribe (): void  {
+
     console.log('completo el subscribe');
   }
 

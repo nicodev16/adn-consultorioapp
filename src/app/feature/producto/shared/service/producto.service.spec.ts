@@ -4,14 +4,14 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { ProductoService } from './producto.service';
 import { environment } from 'src/environments/environment';
 import { HttpService } from 'src/app/core/services/http.service';
-import { Producto } from '../model/producto';
 import { HttpResponse } from '@angular/common/http';
+import { Cita } from '@home/shared/models/cita';
 
 describe('ProductoService', () => {
   let httpMock: HttpTestingController;
   let service: ProductoService;
-  const apiEndpointProductoConsulta = `${environment.endpoint}/tiposFamilia`;
-  const apiEndpointProductos = `${environment.endpoint}/productos`;
+  const apiEndpointProductoConsulta = `${environment.endpoint}/citas`;
+  const apiEndpointProductos = `${environment.endpoint}/citas`;
 
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
@@ -29,7 +29,22 @@ describe('ProductoService', () => {
 
   it('deberia listar productos', () => {
     const dummyProductos = [
-      new Producto('1', 'Producto 1'), new Producto('2', 'Producto 2')
+      new Cita("1", "2021-04-05", "medicina general", {
+        id: 5,
+        nombre: "William",
+        apellido: "Osler",
+        fechaNacimiento: "1973-09-03",
+        especialidad: "Medico general",
+        telefono: "322828392",
+      }),
+      new Cita("2", "2021-04-06", "medicina general", {
+        id: 6,
+        nombre: "Sigmund",
+        apellido: "Freud",
+        fechaNacimiento: "1983-04-03",
+        especialidad: "Neurologo",
+        telefono: "23423223",
+      })
     ];
     service.consultar().subscribe(productos => {
       expect(productos.length).toBe(2);
@@ -41,7 +56,14 @@ describe('ProductoService', () => {
   });
 
   it('deberia crear un producto', () => {
-    const dummyProducto = new Producto('1', 'Producto 1');
+    const dummyProducto = new Cita("1", "2021-04-06", "medicina general", {
+      id: 6,
+      nombre: "Sigmund",
+      apellido: "Freud",
+      fechaNacimiento: "1983-04-03",
+      especialidad: "Neurologo",
+      telefono: "23423223",
+    });
     service.guardar(dummyProducto).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
@@ -51,7 +73,14 @@ describe('ProductoService', () => {
   });
 
   it('deberia eliminar un producto', () => {
-    const dummyProducto = new Producto('1', 'Producto 1');
+    const dummyProducto = new Cita("1", "2021-04-06", "medicina general", {
+      id: 6,
+      nombre: "Sigmund",
+      apellido: "Freud",
+      fechaNacimiento: "1983-04-03",
+      especialidad: "Neurologo",
+      telefono: "23423223",
+    });
     service.eliminar(dummyProducto).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });

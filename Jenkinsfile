@@ -1,15 +1,15 @@
 pipeline {
     agent {
-        label 'Ceiba-Consultorio(nicolas.martin)'
+        label 'Slave_Induccion'
     }
-    
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '3'))
         disableConcurrentBuilds()
     }
 
     tools {
-        jdk 'JDK8_Centos' 
+        jdk 'JDK8_Centos'
     }
 
     stages {
@@ -71,9 +71,9 @@ pipeline {
             failure {
                 echo  'This will run only if failed'
                 mail (
-                    to: 'nicolas.martin@ceiba.com.co', 
+                    to: 'nicolas.martin@ceiba.com.co',
                     subject: 'Failed pipeline: ${currentBuild.fullDisplayName}',
-                    body: 'Algo fallo con el despliegue')
+                    body: `${env.build_url} fallo en esta url`)
             }
 
             unstable {

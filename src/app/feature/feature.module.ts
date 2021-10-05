@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProductoModule } from '@producto/producto.module';
 import { CoreModule } from '@core/core.module';
 import { FeatureRoutingModule } from './feature-routing.module';
+import { HomeModule } from '@home/home.module';
+import { LoginModule } from './login/login.module';
 
 
 
@@ -14,7 +16,9 @@ import { FeatureRoutingModule } from './feature-routing.module';
     CommonModule,
     ProductoModule,
     CoreModule,
-    FeatureRoutingModule
+    HomeModule,
+    LoginModule,
+    FeatureRoutingModule,
   ]
 })
 export class FeatureModule { }

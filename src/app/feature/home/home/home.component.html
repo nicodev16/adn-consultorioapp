@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let cita of listaCitas |async">
+          <div class="container-card">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title">{{cita.fecha | date : 'MMMM d, y h:mm a': 'es-ES'}}</p>
+                <p class="card-text">{{cita.especialidad}}</p>
+                <p class="card-text">{{cita.medico.nombre}} {{cita.medico.apellido}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

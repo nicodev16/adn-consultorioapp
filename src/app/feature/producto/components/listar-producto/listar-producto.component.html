@@ -1,8 +1,24 @@
-<p>listar-producto works!</p>
-<div id="productos">
-  <ul class="productos">
-    <li *ngFor="let item of listaProductos | async">
-      <span>{{item.id}}</span> {{item.descripcion}}
-    </li>
-  </ul>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <caption>Tabla de citas</caption>
+        <thead>
+          <tr class="table-primary">
+            <th id="">#</th>
+            <th id="">Fecha</th>
+            <th id="">Especialidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cita of listaProductos | async">
+            <td id="">{{cita.id}}</td>
+            <td id="">{{cita.fecha | date: 'MMMM d, y h:mm a': 'es-ES'}}</td>
+            <td id="">{{cita.especialidad}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

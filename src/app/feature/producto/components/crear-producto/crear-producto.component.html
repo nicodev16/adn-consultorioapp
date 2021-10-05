@@ -1,22 +1,48 @@
-<h1>Registrar Producto</h1>
-<h3>Ejemplo validacion de formularios reactivos con directiva</h3>
-<form [formGroup]="productoForm" (ngSubmit)="cerar()">
+<div class="container">
+  <h1>Registrar Cita</h1>
   <div class="row">
-    <div class="col-sm-2">
-      <label>Id:</label>
-    </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="idProducto" name="idProducto" placeholder="Id producto" class="form-control"
-        formControlName="id">
+    <div class="col-12">
+      <form [formGroup]="productoForm" (ngSubmit)="cerar()">
+        <div class="row">
+          <div class="col-sm-2">
+            <label>Id:</label>
+          </div>
+          <div class="col-sm-8">
+            <input validar type="text" id="idProducto" name="idProducto" placeholder="Id" class="form-control"
+              formControlName="id">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label>Fecha:</label>
+          </div>
+          <div class="col-sm-8">
+            <input validar type="datetime-local" id="descripcionProducto" name="descripcion" placeholder="YYYY/MM/DD"
+              class="form-control" formControlName="fecha">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label>Especialidad:</label>
+          </div>
+          <div class="col-sm-8">
+            <input validar type="text" id="especialidad" name="especialidad" placeholder="Especialidad"
+              class="form-control" formControlName="especialidad">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <label>Medico:</label>
+          </div>
+          <div class="col-sm-8">
+            <select validar name="medico" id="medico" class="form-control" formControlName="medico">
+              <option [ngValue]="medico" *ngFor="let medico of listMedicos | async">{{medico.nombre}} {{medico.apellido}}</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </form>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-2">
-      <label>Descripción:</label>
-    </div>
-    <div class="col-sm-4">
-      <input validar type="text" id="descripcionProducto" name="descripcion" placeholder="Descripción producto"
-        class="form-control" formControlName="descripcion">
-    </div>
-  </div>
-</form>
+
+</div>

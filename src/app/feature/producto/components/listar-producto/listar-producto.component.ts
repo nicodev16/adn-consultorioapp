@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ProductoService } from '@producto/shared/service/producto.service';
-import { Producto } from '@producto/shared/model/producto';
+// import { Producto } from '@producto/shared/model/producto';
+import { Cita } from '@home/shared/models/cita';
 
 @Component({
   selector: 'app-listar-producto',
@@ -10,7 +11,7 @@ import { Producto } from '@producto/shared/model/producto';
   styleUrls: ['./listar-producto.component.sass']
 })
 export class ListarProductoComponent implements OnInit {
-  public listaProductos: Observable<Producto[]>;
+  public listaProductos: Observable<Cita[]>;
 
   constructor(protected productoService: ProductoService) { }
 
