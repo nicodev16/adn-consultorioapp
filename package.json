@@ -6,7 +6,7 @@
     "start": "ng serve --proxy-config proxy.conf.json -o",
     "build": "ng build --prod",
     "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
-    "json:server": "json-server --watch db.json -m ./node_modules/json-server-auth",
+    "json:server": "json-server --watch src/assets/data/db.json -m ./node_modules/json-server-auth",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
