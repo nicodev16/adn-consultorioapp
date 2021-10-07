@@ -8,8 +8,7 @@ export class Token {
   }
 }
 
-
-class User {
+export class User {
   email: string;
   id: number
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../shared/service/producto.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observer } from 'rxjs';
-// import { Medico } from '@producto/shared/model/medico';
+import { Observable, Observer } from 'rxjs';
+import { Medico } from '@producto/shared/model/medico';
 import { Cita } from '@home/shared/models/cita';
 
 
@@ -12,13 +12,13 @@ import { Cita } from '@home/shared/models/cita';
   styleUrls: ['./crear-producto.component.sass']
 })
 export class CrearProductoComponent implements OnInit {
-  // listMedicos: Observable<Medico[]>;
+  listMedicos: Observable<Medico[]>;
   newCita: Cita;
   productoForm: FormGroup;
   constructor(protected productoServices: ProductoService) { }
 
   ngOnInit() {
-    // this.listMedicos = this.productoServices.getMedicos();
+    this.listMedicos = this.productoServices.getMedicos();
     this.construirFormularioProducto();
   }
 

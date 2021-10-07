@@ -6,11 +6,16 @@ import { BorrarProductoComponent } from './components/borrar-producto/borrar-pro
 import { ProductoComponent } from './components/producto/producto.component';
 
 
+
 const routes: Routes = [
   {
     path: 'producto',
     component: ProductoComponent,
     children: [
+      {
+        path: '',
+        component: ListarProductoComponent
+      },
       {
         path: 'crear',
         component: CrearProductoComponent

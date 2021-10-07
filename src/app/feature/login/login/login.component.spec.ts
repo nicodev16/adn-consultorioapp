@@ -1,81 +1,112 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpService } from '@core/services/http.service';
-import { ProductoComponent } from '@producto/components/producto/producto.component';
-import { LoginService } from '../shared/services/login/login.service';
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Router } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpService } from "@core/services/http.service";
+import { Observable, of, throwError } from "rxjs";
+import { Token } from "../shared/models/token";
+import { LoginService } from "../shared/services/login/login.service";
 
-import { LoginComponent } from './login.component';
+import { LoginComponent } from "./login.component";
 
-describe('LoginComponent', () => {
-  // let component: LoginComponent;
+let routerSpy = { navigate: jasmine.createSpy("navigate") };
+const tokenMock: Token = {
+  accessToken:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pY29sYXMubWFydGluQGNlaWJhLmNvbS5jbyIsImlhdCI6MTYzMzYyMDM4MiwiZXhwIjoxNjMzNjIzOTgyLCJzdWIiOiIxIn0.wAtCdBzmD3UGi6A7zxZL2xPTgWlImyuoKZ-_odN4HjQ",
+  user: {
+    email: "nicolas.martin@ceiba.com.co",
+    id: 1,
+  },
+};
+
+describe("LoginComponent", () => {
+  let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  // let loginService: LoginService;
-  // let redirectPage;
+  let loginService: LoginService;
 
   beforeEach(async () => {
-    // redirectPage = {
-    //   navigate: jasmine.createSpy('navigate')
-    // }
     await TestBed.configureTestingModule({
       imports: [
         FormsModule,
         ReactiveFormsModule,
         HttpClientTestingModule,
-        RouterTestingModule.withRoutes([
-          {path: 'producto', component: ProductoComponent}
-        ])
+        RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
       ],
       providers: [
         LoginService,
         HttpService,
-        Router
+        {
+          provide: Router,
+          useValue: routerSpy,
+        },
       ],
-      declarations: [ LoginComponent ]
-    })
-    .compileComponents();
+      declarations: [LoginComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    // loginService = TestBed.inject(LoginService)
+    loginService = TestBed.inject(LoginService);
     fixture = TestBed.createComponent(LoginComponent);
-    // component = fixture.componentInstance;
+    component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it("should create", () => {
+    expect(component).toBeTruthy();
+  });
+
+  it("Crear formulario de usuario y contraseña y boton de logeo", () => {
+    const inputLogin: HTMLInputElement = document.querySelector("#email");
+    const inputPassword: HTMLInputElement = document.querySelector("#password");
+    const loginButton: HTMLButtonElement =
+      document.querySelector("#buttonLogin");
+
+    expect(inputLogin).toBeDefined();
+    expect(inputPassword).toBeDefined();
+    expect(loginButton).toBeDefined();
+  });
+
+  it("Formulario de login es invalido cuando esta vacio", () => {
+    expect(component.loginForm.valid).toBeFalsy();
+  });
+
+  it("Redirige al home de forma exitosa", () => {
+    component.navigateHome(tokenMock);
+    expect(routerSpy.navigate).toHaveBeenCalledWith(["/home"]);
+  });
+
+  it('Se maneja error en el subscribe', () => {
+
+    const mockCall = spyOn(loginService, 'login').and.returnValues(
+      throwError({status: 404})
+    )
+    component.login()
+    expect(mockCall).toHaveBeenCalled()
 
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('Se ejecuto el complete de forma exitosa', () => {
+    const mockCall = spyOn(loginService, 'login').and.returnValues(
+      of()
+    )
+    component.login()
+    expect(mockCall).toHaveBeenCalled()
+  });
 
-  // it('Inicia sesión almacena en localstorage el token y navega a la pagina productos', fakeAsync(() => {
+  it("Loginservice metodo login es llamado", () => {
+    expect(component.loginForm.valid).toBeFalsy();
+    component.loginForm.controls.email.setValue("nicolas.martin@gmail.com");
+    component.loginForm.controls.password.setValue("contrasena123");
+    expect(component.loginForm.invalid).toBeTruthy();
 
-  //   const inputEmail: HTMLInputElement = document.querySelector('#login')
-  //   const inputPassword: HTMLInputElement  = document.querySelector('#password')
-  //   const buttonLogin: HTMLButtonElement = document.querySelector('#buttonLogin')
+    const loginspy = spyOn(loginService, "login").and.returnValue(
+      new Observable<Token>()
+    );
+    component.login();
 
-  //   const email = 'nicolas.martin@ceiba.com.co'
-  //   const password = 'contrasena123'
-
-  //   const spyLogin = spyOn(loginService, 'login').and.callThrough();
-  //   const event = new Event('input', {bubbles: true})
-
-  //   inputEmail.value = email
-  //   inputEmail.dispatchEvent(event)
-
-  //   inputPassword.value = password
-  //   inputPassword.dispatchEvent(event)
-
-  //   buttonLogin.click()
-
-  //   fixture.detectChanges()
-
-  //   tick(1000)
-
-  //   expect(spyLogin).toHaveBeenCalled()
-  //   expect(redirectPage.navigate).toHaveBeenCalled()
-
-  // }))
+    expect(loginspy).toHaveBeenCalled();
+  });
 });

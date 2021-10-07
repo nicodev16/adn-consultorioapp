@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
@@ -9,6 +9,7 @@
             <th id="">#</th>
             <th id="">Fecha</th>
             <th id="">Especialidad</th>
+            <th id="">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -16,6 +17,9 @@
             <td id="">{{cita.id}}</td>
             <td id="">{{cita.fecha | date: 'MMMM d, y h:mm a': 'es-ES'}}</td>
             <td id="">{{cita.especialidad}}</td>
+            <td id="">
+              <app-borrar-producto [citaDeleted]="cita"></app-borrar-producto>
+            </td>
           </tr>
         </tbody>
       </table>

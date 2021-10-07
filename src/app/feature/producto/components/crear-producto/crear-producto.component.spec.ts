@@ -39,23 +39,25 @@ describe('CrearProductoComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
   it('formulario es invalido cuando esta vacio', () => {
     expect(component.productoForm.valid).toBeFalsy();
   });
 
-  // it('Registrando producto', () => {
-  //   expect(component.productoForm.valid).toBeFalsy();
-  //   component.productoForm.controls.id.setValue('001');
-  //   component.productoForm.controls.descripcion.setValue('Producto test');
-  //   expect(component.productoForm.valid).toBeTruthy();
+  it('Registrando cita', () => {
+    expect(component.productoForm.valid).toBeFalsy();
+    component.productoForm.controls.id.setValue('001');
+    component.productoForm.controls.fecha.setValue('Producto test');
+    component.productoForm.controls.especialidad.setValue('Producto test');
+    component.productoForm.controls.medico.setValue('Producto test');
+    expect(component.productoForm.valid).toBeTruthy();
 
-  //   component.cerar();
+    component.cerar();
 
-  //   // Aca validamos el resultado esperado al enviar la petición
-  //   // TODO adicionar expect
-  // });
+    // Aca validamos el resultado esperado al enviar la petición
+    // TODO adicionar expect
+  });
 });

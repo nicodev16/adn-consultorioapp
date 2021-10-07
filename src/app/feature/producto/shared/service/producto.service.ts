@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '@core-service/http.service';
 import { Cita } from '@home/shared/models/cita';
 import { environment } from 'src/environments/environment';
-// import { Medico } from '../model/medico';
+import { Medico } from '../model/medico';
 
 
 
@@ -25,8 +25,7 @@ export class ProductoService {
                                                  this.http.optsName('eliminar productos'));
   }
 
-
-  // public getMedicos() {
-  //   return this.http.doGet<Medico[]>(`${environment.endpoint}/medicos`, this.http.optsName('consultar medicos'))
-  // }
+  public getMedicos() {
+    return this.http.doGet<Medico[]>(`${environment.endpoint}/medicos`, this.http.optsName('consultar medicos'))
+  }
 }

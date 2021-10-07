@@ -16,6 +16,11 @@ import { ProductoService } from './shared/service/producto.service';
     BorrarProductoComponent,
     ProductoComponent
   ],
+  exports: [
+    CrearProductoComponent,
+    ListarProductoComponent,
+    BorrarProductoComponent,
+  ],
   imports: [
     ProductoRoutingModule,
     SharedModule
