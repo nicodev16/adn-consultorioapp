@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core/services/http.service';
 import { environment } from 'src/environments/environment';
-import { ReqLogin } from '../../models/ReqLogin';
+import { ReqLogin } from '../../models/reqLogin';
 import { Token } from '../../models/token';
 
 
