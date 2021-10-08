@@ -10,7 +10,7 @@ import { LoginService } from "../shared/services/login/login.service";
 
 import { LoginComponent } from "./login.component";
 
-let routerSpy = { navigate: jasmine.createSpy("navigate") };
+let routerSpy = { navigate: jasmine.createSpy('navigate') };
 const tokenMock: Token = {
   accessToken:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pY29sYXMubWFydGluQGNlaWJhLmNvbS5jbyIsImlhdCI6MTYzMzYyMDM4MiwiZXhwIjoxNjMzNjIzOTgyLCJzdWIiOiIxIn0.wAtCdBzmD3UGi6A7zxZL2xPTgWlImyuoKZ-_odN4HjQ",
