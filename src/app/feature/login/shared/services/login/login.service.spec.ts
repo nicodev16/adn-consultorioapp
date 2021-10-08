@@ -6,7 +6,7 @@ import { TestBed } from "@angular/core/testing";
 import { HttpService } from "@core/services/http.service";
 import { environment } from "src/environments/environment";
 
-import { ReqLogin } from "../../models/ReqLogin";
+import { ReqLogin } from '../../models/reqLogin';
 
 import { LoginService } from "./login.service";
 
