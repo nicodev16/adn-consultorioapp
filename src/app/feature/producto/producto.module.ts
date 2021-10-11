@@ -20,6 +20,7 @@ import { ProductoService } from './shared/service/producto.service';
     CrearProductoComponent,
     ListarProductoComponent,
     BorrarProductoComponent,
+    ProductoComponent
   ],
   imports: [
     ProductoRoutingModule,

@@ -9,7 +9,7 @@ import { ProductoComponent } from './components/producto/producto.component';
 
 const routes: Routes = [
   {
-    path: 'producto',
+    path: '',
     component: ProductoComponent,
     children: [
       {

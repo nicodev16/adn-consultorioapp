@@ -5,20 +5,26 @@ import { CoreModule } from '@core/core.module';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { HomeModule } from '@home/home.module';
 import { LoginModule } from './login/login.module';
+import { MedicosModule } from './medicos/medicos.module';
+import { FeatureComponent } from './feature.component';
 
 
 
 @NgModule({
   declarations: [
-
+    FeatureComponent
+  ],
+  exports: [
+    FeatureComponent
   ],
   imports: [
     CommonModule,
-    ProductoModule,
     CoreModule,
-    HomeModule,
-    LoginModule,
     FeatureRoutingModule,
+    HomeModule,
+    MedicosModule,
+    ProductoModule,
+    LoginModule,
   ]
 })
 export class FeatureModule { }

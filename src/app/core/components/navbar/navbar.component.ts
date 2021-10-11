@@ -1,9 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { MenuItem } from '@core/modelo/menu-item';
+import { LoginService } from 'src/app/feature/login/shared/services/login/login.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: 'navbar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [`:host {
     border: 0 solid #e1e1e1;
     border-bottom-width: 1px;
@@ -23,6 +25,7 @@ import { MenuItem } from '@core/modelo/menu-item';
     cursor: pointer;
   }
 
+
   nav a.router-link-active {
     color: #106cc8;
   }`],
@@ -31,10 +34,16 @@ export class NavbarComponent implements OnInit {
 
   @Input()
   items: MenuItem[];
+  isLogged = false;
 
-  constructor() { }
+  constructor(protected loginService: LoginService) { }
 
   ngOnInit() {
+    this.isLogged = this.loginService.getLogged();
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 
 }

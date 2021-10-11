@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   navigateRoute() {
+    console.log('navega');
     this.route.navigate(["/home"]);
   }
 

@@ -20,15 +20,15 @@ export class CrearProductoComponent implements OnInit {
   ngOnInit() {
     this.listMedicos = this.productoServices.getMedicos();
     this.construirFormularioProducto();
+
   }
 
   cerar() {
-    console.log(this.productoForm.value);
     const observerCita: Observer<boolean> = {
       next: (value: boolean) => {console.log(value)},
       error: (error: any) => {console.log(error)},
       complete: () => {console.log('complete')}
-    }
+    };
     this.productoServices.guardar(this.productoForm.value).subscribe(observerCita);
   }
 

@@ -19,13 +19,13 @@ export class BorrarProductoComponent implements OnInit {
 
   }
 
-  borrar () {
+  borrar() {
     let observerDelete: Observer<boolean> = {
       next: (value: boolean) => console.log(value),
       error: (error: any) => console.log(error),
       complete: () => console.log('complete subscribe')
     }
-    this.productoService.eliminar(this.citaDeleted).subscribe(observerDelete)
+    this.productoService.eliminar(this.citaDeleted).subscribe(observerDelete);
   }
 
 }
