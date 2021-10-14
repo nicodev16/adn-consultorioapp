@@ -9,7 +9,7 @@ export class ControlBase<T> {
   controlType: string;
   type: string;
   options: {}[];
-  optionsObject: Observable<any[]>;
+  optionsObject: Observable<{}[]>;
 
   constructor(options: {
     value?: T;
@@ -20,7 +20,7 @@ export class ControlBase<T> {
     controlType?: string;
     type?: string;
     options?: {}[];
-    optionsObject?: Observable<any[]>;
+    optionsObject?: Observable<{}[]>;
   } = {}) {
     this.value = options.value;
     this.key = options.key || '';

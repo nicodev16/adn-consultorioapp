@@ -11,7 +11,7 @@ import { FormService } from '../shared/service/form.service';
 export class FormContainerComponent implements OnInit {
 
   @Input() controls: ControlBase<string>[] | null = [];
-  @Output() formValue: EventEmitter<any> = new EventEmitter<any>();
+  @Output() formValue: EventEmitter<{}> = new EventEmitter<{}>();
   form!: FormGroup;
 
   constructor(private formService: FormService) { }

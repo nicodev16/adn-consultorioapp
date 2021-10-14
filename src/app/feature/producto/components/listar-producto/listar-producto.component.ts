@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ProductoService } from '@producto/shared/service/producto.service';
-// import { Producto } from '@producto/shared/model/producto';
 import { Cita } from '@home/shared/models/cita';
 
 @Component({

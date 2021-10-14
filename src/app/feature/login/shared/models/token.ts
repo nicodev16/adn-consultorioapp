@@ -10,7 +10,7 @@ export class Token {
 
 export class User {
   email: string;
-  id: number
+  id: number;
 
   constructor(email: string, id: number) {
     this.email = email;
