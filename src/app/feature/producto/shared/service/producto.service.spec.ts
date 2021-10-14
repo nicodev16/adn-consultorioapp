@@ -29,21 +29,21 @@ describe('ProductoService', () => {
 
   it('deberia listar productos', () => {
     const dummyProductos = [
-      new Cita("1", "2021-04-05", "medicina general", {
+      new Cita(1, '2021-04-05', 'medicina general', {
         id: 5,
-        nombre: "William",
-        apellido: "Osler",
-        fechaNacimiento: "1973-09-03",
-        especialidad: "Medico general",
-        telefono: "322828392",
+        nombre: 'William',
+        apellido: 'Osler',
+        fechaNacimiento: '1973-09-03',
+        especialidad: 'Medico general',
+        telefono: '322828392',
       }),
-      new Cita("2", "2021-04-06", "medicina general", {
+      new Cita(2, '2021-04-06', 'medicina general', {
         id: 6,
-        nombre: "Sigmund",
-        apellido: "Freud",
-        fechaNacimiento: "1983-04-03",
-        especialidad: "Neurologo",
-        telefono: "23423223",
+        nombre: 'Sigmund',
+        apellido: 'Freud',
+        fechaNacimiento: '1983-04-03',
+        especialidad: 'Neurologo',
+        telefono: '23423223',
       })
     ];
     service.consultar().subscribe(productos => {
@@ -56,13 +56,13 @@ describe('ProductoService', () => {
   });
 
   it('deberia crear un producto', () => {
-    const dummyProducto = new Cita("1", "2021-04-06", "medicina general", {
+    const dummyProducto = new Cita(1, '2021-04-06', 'medicina general', {
       id: 6,
-      nombre: "Sigmund",
-      apellido: "Freud",
-      fechaNacimiento: "1983-04-03",
-      especialidad: "Neurologo",
-      telefono: "23423223",
+      nombre: 'Sigmund',
+      apellido: 'Freud',
+      fechaNacimiento: '1983-04-03',
+      especialidad: 'Neurologo',
+      telefono: '23423223',
     });
     service.guardar(dummyProducto).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
@@ -73,19 +73,56 @@ describe('ProductoService', () => {
   });
 
   it('deberia eliminar un producto', () => {
-    const dummyProducto = new Cita("1", "2021-04-06", "medicina general", {
+    const dummyCita = new Cita(1, '2021-04-06', 'medicina general', {
       id: 6,
-      nombre: "Sigmund",
-      apellido: "Freud",
-      fechaNacimiento: "1983-04-03",
-      especialidad: "Neurologo",
-      telefono: "23423223",
+      nombre: 'Sigmund',
+      apellido: 'Freud',
+      fechaNacimiento: '1983-04-03',
+      especialidad: 'Neurologo',
+      telefono: '23423223',
     });
-    service.eliminar(dummyProducto).subscribe((respuesta) => {
+    service.eliminar(dummyCita).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
     const req = httpMock.expectOne(`${apiEndpointProductos}/1`);
     expect(req.request.method).toBe('DELETE');
     req.event(new HttpResponse<boolean>({body: true}));
+  });
+
+  it('debe listar citas segun fecha', () => {
+    const dummyCitas = [
+      new Cita(78, '2021-10-12T15:30', 'bacteriologia', {
+        id: 4,
+        nombre: 'Edward',
+        apellido: 'Jenner',
+        fechaNacimiento: '1973-09-03',
+        especialidad: 'Medico general',
+        telefono: '322828392',
+      }),
+      new Cita(46, '2021-10-12T15:30', 'medicina general',
+      {
+          id: 5,
+          nombre: 'William',
+          apellido: 'Osler',
+          fechaNacimiento: '1973-09-03',
+          especialidad: 'Medico general',
+          telefono: '322828392'
+      })
+    ];
+    const dummyCita = new Cita(1, '2021-10-12T15:30', 'medicina general', {
+      id: 33,
+      nombre: 'Sigmund',
+      apellido: 'Freud',
+      fechaNacimiento: '1983-04-03',
+      especialidad: 'Neurologo',
+      telefono: '23423223',
+    });
+    service.getCitasByFecha(dummyCita.fecha).subscribe(citas => {
+      expect(citas.length).toBe(2);
+      expect(citas).toEqual(dummyCitas);
+    });
+    const req = httpMock.expectOne(`${apiEndpointProductoConsulta}?fecha=${dummyCita.fecha}`);
+    expect(req.request.method).toBe('GET');
+    req.flush(dummyCitas);
   });
 });

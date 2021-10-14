@@ -1,10 +1,10 @@
 export class Token {
   accessToken: string;
-  user: User
+  user: User;
 
   constructor(accessToken: string, user: User) {
-    this.accessToken = accessToken
-    this.user = user
+    this.accessToken = accessToken;
+    this.user = user;
   }
 }
 
@@ -13,7 +13,7 @@ export class User {
   id: number
 
   constructor(email: string, id: number) {
-    this.email = email
-    this.id = id
+    this.email = email;
+    this.id = id;
   }
 }

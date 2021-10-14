@@ -11,7 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpService, private router: Router) { }
 
-  public login (data: ReqLogin) {
+  public login(data: ReqLogin) {
     return this.http.doPost<ReqLogin, Token>(`${environment.endpoint}/login`,
                                                           data, this.http.optsName('Ingreso al sistema') );
   }

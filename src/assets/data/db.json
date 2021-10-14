@@ -71,6 +71,22 @@
       "fechaNacimiento": "1996-01-06",
       "especialidad": "Otorinolaringologia",
       "telefono": "300123289131"
+    },
+    {
+      "id": 25,
+      "nombre": "Andres",
+      "apellido": "Rodriguez",
+      "fechaNacimiento": "1982-05-20",
+      "especialidad": "oncologia",
+      "telefono": "3242323212"
+    },
+    {
+      "id": 26,
+      "nombre": "Laura",
+      "apellido": "Diaz",
+      "fechaNacimiento": "1997-02-13",
+      "especialidad": "medicina general",
+      "telefono": "321456736"
     }
   ],
   "users": [
@@ -156,6 +172,168 @@
         "apellido": "Bolaños",
         "fechaNacimiento": "1983-04-03",
         "especialidad": "Otorinolaringolo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 34,
+      "fecha": "2021-10-15",
+      "especialidad": "proctologia",
+      "medico": "sigmund freud"
+    },
+    {
+      "id": 76,
+      "fecha": "2021-10-15T17:05",
+      "especialidad": "otorinolaringologia",
+      "medico": {
+        "id": 26,
+        "nombre": "Laura",
+        "apellido": "Diaz",
+        "fechaNacimiento": "1997-02-13",
+        "especialidad": "medicina general",
+        "telefono": "321456736"
+      }
+    },
+    {
+      "id": 26,
+      "fecha": "2021-10-16T18:41",
+      "especialidad": "oncologia",
+      "medico": {
+        "id": 1,
+        "nombre": "Roberto",
+        "apellido": "Bolaños",
+        "fechaNacimiento": "1983-04-03",
+        "especialidad": "Otorinolaringolo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": "99",
+      "fecha": "2021-10-16T19:18",
+      "especialidad": "proctologia",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 46,
+      "fecha": "2021-10-12T15:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 78,
+      "fecha": "2021-10-12T15:30",
+      "especialidad": "bacteriologia",
+      "medico": {
+        "id": 4,
+        "nombre": "Edward",
+        "apellido": "Jenner",
+        "fechaNacimiento": "1973-04-03",
+        "especialidad": "Proctologo",
+        "telefono": "322823392"
+      }
+    },
+    {
+      "id": 66,
+      "fecha": "2021-10-13T10:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 67,
+      "fecha": "2021-10-13T10:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 68,
+      "fecha": "2021-10-13T10:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 69,
+      "fecha": "2021-10-13T10:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 70,
+      "fecha": "2021-10-13T10:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 71,
+      "fecha": "2021-10-13T10:30",
+      "especialidad": "bacteriologia",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 72,
+      "fecha": "2021-10-13T11:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
         "telefono": "322828392"
       }
     }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ControlBase } from '../shared/models/control-base';
 import { FormService } from '../shared/service/form.service';
@@ -11,6 +11,7 @@ import { FormService } from '../shared/service/form.service';
 export class FormContainerComponent implements OnInit {
 
   @Input() controls: ControlBase<string>[] | null = [];
+  @Output() formValue: EventEmitter<any> = new EventEmitter<any>();
   form!: FormGroup;
 
   constructor(private formService: FormService) { }
@@ -20,7 +21,7 @@ export class FormContainerComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.formValue.emit(this.form.value);
   }
 
 }

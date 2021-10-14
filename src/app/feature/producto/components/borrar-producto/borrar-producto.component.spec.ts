@@ -4,7 +4,6 @@ import {
 } from '@angular/router/testing';
 import { BorrarProductoComponent } from './borrar-producto.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ProductoService } from '@producto/shared/service/producto.service';
 import { HttpService } from '@core/services/http.service';
@@ -20,7 +19,6 @@ describe('BorrarProductoComponent', () => {
       declarations: [ BorrarProductoComponent ],
       imports: [
         CommonModule,
-        HttpClientModule,
         RouterTestingModule,
         HttpClientTestingModule
       ],
@@ -33,7 +31,7 @@ describe('BorrarProductoComponent', () => {
   }));
 
   beforeEach(() => {
-    productoService = TestBed.inject(ProductoService)
+    productoService = TestBed.inject(ProductoService);
     fixture = TestBed.createComponent(BorrarProductoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -46,26 +44,26 @@ describe('BorrarProductoComponent', () => {
   it('Se maneja el error en el subscribe', () => {
     const mockCall = spyOn(productoService, 'eliminar').and.returnValues(
       throwError({status: 404})
-    )
-    component.borrar()
-    expect(mockCall).toHaveBeenCalled()
+    );
+    component.borrar();
+    expect(mockCall).toHaveBeenCalled();
   });
 
   it('Se ejecuto el complete de forma exitosa', () => {
     const mockCall = spyOn(productoService, 'eliminar').and.returnValues(
       of()
-    )
-    component.borrar()
-    expect(mockCall).toHaveBeenCalled()
+    );
+    component.borrar();
+    expect(mockCall).toHaveBeenCalled();
   });
 
   it('CitaService metodo eliminar es llamado', () => {
     const citaSpy = spyOn(productoService, 'eliminar').and.returnValues(
       new Observable<boolean>()
-    )
+    );
 
     component.borrar();
 
-    expect(citaSpy).toHaveBeenCalled()
+    expect(citaSpy).toHaveBeenCalled();
   });
 });

@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ControlBase } from "../models/control-base";
+import { Injectable } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ControlBase } from '../models/control-base';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class FormService {
   constructor() {}

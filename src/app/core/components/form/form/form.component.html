@@ -2,9 +2,11 @@
   <label [attr.for]="controls.key">{{controls.label}}</label>
 
   <div [ngSwitch]="controls.controlType">
+
+
     <input
-      class="form-control"
       validar
+      class="form-control"
       *ngSwitchCase="'textbox'"
       [formControlName]="controls.key"
       [id]="controls.key"
@@ -12,10 +14,39 @@
       >
     <select
       validar
+      class="form-control"
       [id]="controls.key"
       *ngSwitchCase="'select'"
       [formControlName]="controls.key">
-      <option *ngFor="let opt of controls.options" [value]="opt.key">{{opt.value}}</option>
+      <option *ngFor="let opt of controls.options " [value]="opt.key">{{opt.value}}</option>
     </select>
+
+    <select
+      validar
+      class="form-control"
+      [id]="controls.key"
+      *ngSwitchCase="'selectObject'"
+      [formControlName]="controls.key">
+      <option *ngFor="let opt of controls.optionsObject | async" [ngValue]="opt">{{opt.nombre}} {{opt.apellido}}</option>
+    </select>
+
+
+    <input
+      validar
+      class="form-control"
+      *ngSwitchCase="'date'"
+      [formControlName]="controls.key"
+      [id]="controls.key"
+      [type]="controls.type"
+    >
+
+    <input
+      validar
+      class="form-control"
+      *ngSwitchCase="'datetime-local'"
+      [formControlName]="controls.key"
+      [id]="controls.key"
+      [type]="controls.type"
+    >
   </div>
 </div>

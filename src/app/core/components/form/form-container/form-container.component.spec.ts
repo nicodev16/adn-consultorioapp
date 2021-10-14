@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormService } from '../shared/service/form.service';
 
 import { FormContainerComponent } from './form-container.component';
 
@@ -8,6 +9,9 @@ describe('FormContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [
+        FormService
+      ],
       declarations: [ FormContainerComponent ]
     })
     .compileComponents();
@@ -21,5 +25,12 @@ describe('FormContainerComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Se realiza la emición de los datos del formulario', () => {
+    const spyOnEmit = spyOn(component.formValue, 'emit');
+
+    component.onSubmit();
+    expect(spyOnEmit).toHaveBeenCalled();
   });
 });

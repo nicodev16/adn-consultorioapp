@@ -13,7 +13,7 @@ describe('HomeComponent', () => {
   let fixture: ComponentFixture<HomeComponent>;
   let homeService: HomeService;
   const listaCitas: Cita[] = [
-    new Cita('1', '2021-04-05', 'medicina general', {
+    new Cita(1, '2021-04-05', 'medicina general', {
       id: 5,
       nombre: 'William',
       apellido: 'Osler',
@@ -21,7 +21,7 @@ describe('HomeComponent', () => {
       especialidad: 'Medico general',
       telefono: '322828392',
     }),
-    new Cita('2', '2021-04-06', 'medicina general', {
+    new Cita(2, '2021-04-06', 'medicina general', {
       id: 6,
       nombre: 'Sigmund',
       apellido: 'Freud',

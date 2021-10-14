@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  public listaCitas: Observable<Cita[]>
+  public listaCitas: Observable<Cita[]>;
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-    this.listaCitas = this.homeService.getCitas()
+    this.listaCitas = this.homeService.getCitas();
   }
 
 

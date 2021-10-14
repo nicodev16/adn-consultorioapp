@@ -7,6 +7,7 @@ import { ListarMedicoComponent } from './components/listar-medico/listar-medico.
 import { SharedModule } from '@shared/shared.module';
 import { BorrarMedicoComponent } from './components/borrar-medico/borrar-medico.component';
 import { CoreModule } from '@core/core.module';
+import { MedicoService } from './shared/service/medico.service';
 
 
 
@@ -22,6 +23,9 @@ import { CoreModule } from '@core/core.module';
     MedicoComponent,
     ListarMedicoComponent,
     BorrarMedicoComponent
+  ],
+  providers: [
+    MedicoService
   ],
   imports: [
     CommonModule,
