@@ -8,8 +8,7 @@ import { SharedModule } from '@shared/shared.module';
 import { BorrarMedicoComponent } from './components/borrar-medico/borrar-medico.component';
 import { CoreModule } from '@core/core.module';
 import { MedicoService } from './shared/service/medico.service';
-
-
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,8 @@ import { MedicoService } from './shared/service/medico.service';
     CommonModule,
     MedicosRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    NgbPaginationModule
   ]
 })
 export class MedicosModule { }

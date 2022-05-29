@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProductoService } from '../../shared/service/producto.service';
 import { HttpService } from 'src/app/core/services/http.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { Cita } from '@home/shared/models/cita';
+import { Cita } from '@shared/models/cita';
 import { Observable, of } from 'rxjs';
 import { ProductoMockService } from '@shared/data/productoMockService';
 import { HttpClientTestingModule } from '@angular/common/http/testing';

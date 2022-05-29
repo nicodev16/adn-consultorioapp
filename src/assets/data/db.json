@@ -1,22 +1,6 @@
 {
   "medicos": [
     {
-      "id": 1,
-      "nombre": "Roberto",
-      "apellido": "Bolaños",
-      "fechaNacimiento": "1983-04-03",
-      "especialidad": "Otorinolaringolo",
-      "telefono": "322828392"
-    },
-    {
-      "id": 2,
-      "nombre": "Juan",
-      "apellido": "Bautista",
-      "fechaNacimiento": "1983-04-02",
-      "especialidad": "Oncologo",
-      "telefono": "322828323"
-    },
-    {
       "id": 3,
       "nombre": "Alexander",
       "apellido": "Fleming",
@@ -87,6 +71,22 @@
       "fechaNacimiento": "1997-02-13",
       "especialidad": "medicina general",
       "telefono": "321456736"
+    },
+    {
+      "id": 28,
+      "nombre": "Ricardo",
+      "apellido": "Capera",
+      "fechaNacimiento": "1999-03-19",
+      "especialidad": "otorinolaringologia",
+      "telefono": "324544534"
+    },
+    {
+      "id": 56,
+      "nombre": "Nicolas",
+      "apellido": "Martin",
+      "fechaNacimiento": "2021-10-21",
+      "especialidad": "bacteriologia",
+      "telefono": "1231231231"
     }
   ],
   "users": [
@@ -98,71 +98,6 @@
   ],
   "citas": [
     {
-      "id": 7,
-      "fecha": "2021-05-12 18:30:00",
-      "especialidad": "Oftanmologia",
-      "medico": {
-        "id": 7,
-        "nombre": "Louis",
-        "apellido": "Pasteour",
-        "fechaNacimiento": "1984-09-12",
-        "especialidad": "Oftanmologo",
-        "telefono": "232312821"
-      }
-    },
-    {
-      "id": "10",
-      "fecha": "2021-05-12 18:50:00",
-      "especialidad": "Oftanmologia",
-      "medico": {
-        "id": 7,
-        "nombre": "Louis",
-        "apellido": "Pasteour",
-        "fechaNacimiento": "1984-09-12",
-        "especialidad": "Oftanmologo",
-        "telefono": "232312821"
-      }
-    },
-    {
-      "id": "11",
-      "fecha": "2021-05-12 18:50:00",
-      "especialidad": "Oftanmologia",
-      "medico": {
-        "id": 7,
-        "nombre": "Louis",
-        "apellido": "Pasteour",
-        "fechaNacimiento": "1984-09-12",
-        "especialidad": "Oftanmologo",
-        "telefono": "232312821"
-      }
-    },
-    {
-      "id": "13",
-      "fecha": "2021-10-14",
-      "especialidad": "Medicina general",
-      "medico": {
-        "id": 6,
-        "nombre": "Sigmund",
-        "apellido": "Freud",
-        "fechaNacimiento": "1983-04-03",
-        "especialidad": "Neurologo",
-        "telefono": "23423223"
-      }
-    },
-    {
-      "id": "14",
-      "fecha": "2021-10-15T17:30",
-      "especialidad": "Medicina general",
-      "medico": {
-        "id": 5,
-        "nombre": "William",
-        "apellido": "Osler",
-        "fechaNacimiento": "1973-09-03",
-        "especialidad": "Medico general",
-        "telefono": "322828392"
-      }
-    },
-    {
       "id": "16",
       "fecha": "2021-10-07T13:21",
       "especialidad": "Otorinolaringologia",
@@ -173,25 +108,6 @@
         "fechaNacimiento": "1983-04-03",
         "especialidad": "Otorinolaringolo",
         "telefono": "322828392"
-      }
-    },
-    {
-      "id": 34,
-      "fecha": "2021-10-15",
-      "especialidad": "proctologia",
-      "medico": "sigmund freud"
-    },
-    {
-      "id": 76,
-      "fecha": "2021-10-15T17:05",
-      "especialidad": "otorinolaringologia",
-      "medico": {
-        "id": 26,
-        "nombre": "Laura",
-        "apellido": "Diaz",
-        "fechaNacimiento": "1997-02-13",
-        "especialidad": "medicina general",
-        "telefono": "321456736"
       }
     },
     {
@@ -231,19 +147,6 @@
         "fechaNacimiento": "1973-09-03",
         "especialidad": "Medico general",
         "telefono": "322828392"
-      }
-    },
-    {
-      "id": 78,
-      "fecha": "2021-10-12T15:30",
-      "especialidad": "bacteriologia",
-      "medico": {
-        "id": 4,
-        "nombre": "Edward",
-        "apellido": "Jenner",
-        "fechaNacimiento": "1973-04-03",
-        "especialidad": "Proctologo",
-        "telefono": "322823392"
       }
     },
     {
@@ -335,6 +238,279 @@
         "fechaNacimiento": "1973-09-03",
         "especialidad": "Medico general",
         "telefono": "322828392"
+      }
+    },
+    {
+      "id": 100,
+      "fecha": "2021-10-15T15:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 200,
+      "fecha": "2021-10-19T11:30",
+      "especialidad": "otorinolaringologia",
+      "medico": {
+        "id": 2,
+        "nombre": "Juan",
+        "apellido": "Bautista",
+        "fechaNacimiento": "1983-04-02",
+        "especialidad": "Oncologo",
+        "telefono": "322828323"
+      }
+    },
+    {
+      "id": 44,
+      "fecha": "2021-10-20T10:40",
+      "especialidad": "oncologia",
+      "medico": {
+        "id": 8,
+        "nombre": "Elizabeth",
+        "apellido": "Blackwell",
+        "fechaNacimiento": "1972-05-17",
+        "especialidad": "Medico general",
+        "telefono": "23423223"
+      }
+    },
+    {
+      "id": 45,
+      "fecha": "2021-10-20T10:40",
+      "especialidad": "bacteriologia",
+      "medico": {
+        "id": 5,
+        "nombre": "William",
+        "apellido": "Osler",
+        "fechaNacimiento": "1973-09-03",
+        "especialidad": "Medico general",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 47,
+      "fecha": "2021-10-20T10:45",
+      "especialidad": "oncologia",
+      "medico": {
+        "id": 25,
+        "nombre": "Andres",
+        "apellido": "Rodriguez",
+        "fechaNacimiento": "1982-05-20",
+        "especialidad": "oncologia",
+        "telefono": "3242323212"
+      }
+    },
+    {
+      "id": 76,
+      "fecha": "2021-10-28T10:45",
+      "especialidad": "otorinolaringologia",
+      "medico": {
+        "id": 56,
+        "nombre": "Nicolas",
+        "apellido": "Martin",
+        "fechaNacimiento": "2021-10-21",
+        "especialidad": "bacteriologia",
+        "telefono": "1231231231"
+      }
+    },
+    {
+      "id": 78678,
+      "fecha": "2021-12-09T12:12",
+      "especialidad": "otorinolaringologia",
+      "medico": {
+        "id": 28,
+        "nombre": "Ricardo",
+        "apellido": "Capera",
+        "fechaNacimiento": "1999-03-19",
+        "especialidad": "otorinolaringologia",
+        "telefono": "324544534"
+      }
+    },
+    {
+      "id": 48,
+      "fecha": "0211-12-20T02:34",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 49,
+      "fecha": "2021-10-28T13:59",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 56,
+        "nombre": "Nicolas",
+        "apellido": "Martin",
+        "fechaNacimiento": "2021-10-21",
+        "especialidad": "bacteriologia",
+        "telefono": "1231231231"
+      }
+    },
+    {
+      "id": 50,
+      "fecha": "2021-10-28T12:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 6,
+        "nombre": "Sigmund",
+        "apellido": "Freud",
+        "fechaNacimiento": "1983-04-03",
+        "especialidad": "Neurologo",
+        "telefono": "23423223"
+      }
+    },
+    {
+      "id": 51,
+      "fecha": "2021-10-28T18:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 52,
+      "fecha": "0211-12-20T03:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 101,
+      "fecha": "0211-12-20T04:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 102,
+      "fecha": "0211-12-20T03:43",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 105,
+      "fecha": "2021-10-29T19:42",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 107,
+      "fecha": "2021-10-28T13:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 6,
+        "nombre": "Sigmund",
+        "apellido": "Freud",
+        "fechaNacimiento": "1983-04-03",
+        "especialidad": "Neurologo",
+        "telefono": "23423223"
+      }
+    },
+    {
+      "id": 108,
+      "fecha": "2021-10-07T01:43",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 109,
+      "fecha": "2021-02-17T01:43",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 110,
+      "fecha": "2021-04-16T01:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 111,
+      "fecha": "2021-09-16T01:30",
+      "especialidad": "medicina general",
+      "medico": {
+        "id": 3,
+        "nombre": "Alexander",
+        "apellido": "Fleming",
+        "fechaNacimiento": "1982-06-02",
+        "especialidad": "Bacteriologo",
+        "telefono": "322828392"
+      }
+    },
+    {
+      "id": 456789,
+      "fecha": "2021-11-26T16:30",
+      "especialidad": "otorinolaringologia",
+      "medico": {
+        "id": 6,
+        "nombre": "Sigmund",
+        "apellido": "Freud",
+        "fechaNacimiento": "1983-04-03",
+        "especialidad": "Neurologo",
+        "telefono": "23423223"
       }
     }
   ]

@@ -1,7 +1,7 @@
 import { Component, Input} from '@angular/core';
-import { Medico } from '@producto/shared/model/medico';
-import { Observer } from 'rxjs';
+import { Medico } from '../../../../shared/models/medico';
 import { MedicoService } from '../../shared/service/medico.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-borrar-medico',
@@ -16,12 +16,27 @@ export class BorrarMedicoComponent {
 
 
   borrar() {
-    const observerDelete: Observer<boolean> = {
-      next: (value: boolean) => console.log(value),
-      error: (error: any) => console.log(error),
-      complete: () => console.log('complete subscribe')
-    };
-    this.medicoService.eliminarMedico(this.medicoDeleted).subscribe(observerDelete);
+    this.medicoService.eliminarMedico(this.medicoDeleted).subscribe(this.eliminate, this.manageError);
+  }
+
+  public manageError = (error) => {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: error.error,
+      showConfirmButton: false,
+      timer: 5000
+    });
+  }
+
+  public eliminate = (value: boolean) => {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Eliminación exitosa' + value,
+      showConfirmButton: false,
+      timer: 5000
+    });
   }
 
 }

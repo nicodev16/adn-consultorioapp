@@ -1,7 +1,8 @@
-import { Component, Input} from '@angular/core';
-import { Cita } from '@home/shared/models/cita';
+import { Component, Input } from '@angular/core';
+import { Cita } from '@shared/models/cita';
 import { ProductoService } from '@producto/shared/service/producto.service';
-import { Observable, Observer } from 'rxjs';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-borrar-producto',
@@ -11,17 +12,33 @@ import { Observable, Observer } from 'rxjs';
 export class BorrarProductoComponent{
 
   @Input() citaDeleted: Cita;
-  isDeleted: Observable<boolean>;
 
   constructor(private productoService: ProductoService) { }
 
   borrar() {
-    const observerDelete: Observer<boolean> = {
-      next: (value: boolean) => console.log(value),
-      error: (error: any) => console.log(error),
-      complete: () => console.log('complete subscribe')
-    };
-    this.productoService.eliminar(this.citaDeleted).subscribe(observerDelete);
+    this.productoService.eliminar(this.citaDeleted).subscribe(this.eliminate, this.manageError);
   }
+
+  public manageError = (error) => {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: error.error,
+      showConfirmButton: false,
+      timer: 5000
+    });
+  }
+
+  public eliminate = () => {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Eliminación exitosa',
+      showConfirmButton: false,
+      timer: 5000
+    });
+  }
+
+
 
 }

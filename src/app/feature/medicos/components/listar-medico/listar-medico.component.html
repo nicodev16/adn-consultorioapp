@@ -1,8 +1,11 @@
-<div class="container mt-5">
+<div class="container mt-2">
   <div class="row">
-    <div class="col-12">
-      <table class="table table-striped">
-        <caption>Tabla de medicos</caption>
+
+    <div class="table-responsive-sm">
+      <table class="table table-striped text-center">
+        <caption>
+          Tabla de medicos
+        </caption>
         <thead>
           <tr class="table-primary">
             <th id="id">#</th>
@@ -14,10 +17,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let medico of listaMedicos | async">
-            <td>{{medico.id}}</td>
-            <td>{{medico.nombre}}</td>
-            <td>{{medico.especialidad}}</td>
-            <td>{{medico.telefono}}</td>
+            <td>{{ medico.id }}</td>
+            <td>{{ medico.nombre }}</td>
+            <td>{{ medico.especialidad }}</td>
+            <td>{{ medico.telefono }}</td>
             <td>
               <app-borrar-medico [medicoDeleted]="medico"></app-borrar-medico>
             </td>
@@ -25,5 +28,13 @@
         </tbody>
       </table>
     </div>
+
+      <ngb-pagination
+        class="d-flex justify-content-center"
+        [collectionSize]="size"
+        [maxSize]="limit"
+        (pageChange)="loadPage($event)"
+      >
+      </ngb-pagination>
   </div>
 </div>

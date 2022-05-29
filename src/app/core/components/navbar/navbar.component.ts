@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { MenuItem } from '@core/modelo/menu-item';
-import { LoginService } from 'src/app/feature/login/shared/services/login/login.service';
+import { LoginService } from '@core/services/login.service';
 
 @Component({
   selector: 'app-navbar',

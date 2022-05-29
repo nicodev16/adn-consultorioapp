@@ -25,12 +25,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [ 
+            "styles": [
               "src/styles.sass",
-              "node_modules/bootstrap/scss/bootstrap.scss"          
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+              "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@fortawesome/fontawesome-free/js/brands.js",
+              "node_modules/@fortawesome/fontawesome-free/js/solid.js",
+              "node_modules/@fortawesome/fontawesome-free/js/regular.js",
+              "node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"
             ]
           },
           "configurations": {
@@ -95,7 +103,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass" 
+              "src/styles.sass"
             ],
             "scripts": []
           }

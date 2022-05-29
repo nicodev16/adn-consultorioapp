@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { waitForAsync, TestBed, ComponentFixture } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
-import { Cita } from '@home/shared/models/cita';
+import { Cita } from '@shared/models/cita';
 import { HomeService } from '@home/shared/service/home.service';
 import { of } from 'rxjs';
 

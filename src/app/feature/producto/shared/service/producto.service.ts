@@ -5,15 +5,16 @@ import { DateControl } from '@core/components/form/shared/models/date';
 import { SelectControl } from '@core/components/form/shared/models/select';
 import { SelectObjectControl } from '@core/components/form/shared/models/select-objects';
 import { TextBoxControl } from '@core/components/form/shared/models/textbox';
-import { Cita } from '@home/shared/models/cita';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Medico } from '../model/medico';
+import { Cita } from '@shared/models/cita';
+import { Medico } from '@shared/models/medico';
 
 
 
 @Injectable()
 export class ProductoService {
+
 
   medicos: Observable<Medico[]>;
 
@@ -26,7 +27,7 @@ export class ProductoService {
   }
 
   public guardar(cita: Cita) {
-    return this.http.doPost<Cita, boolean>(`${environment.endpoint}/citas`, cita,
+    return this.http.doPost<Cita, Cita>(`${environment.endpoint}/citas`, cita,
                                                 this.http.optsName('crear/actualizar citas '));
   }
 
@@ -37,6 +38,11 @@ export class ProductoService {
 
   public getCitasByFecha(fecha: string){
     return this.http.doGet<Cita[]>(`${environment.endpoint}/citas?fecha=${fecha}`, this.http.optsName('Consulta las citas por fecha'));
+  }
+
+  public getCitasPaginate(page: number){
+    return this.http.doGet<Cita[]>(`${environment.endpoint}/citas?_page=${page}_limit=10`,
+                                                this.http.optsName('Consulta las citas paginadas'));
   }
 
   public getMedicos() {

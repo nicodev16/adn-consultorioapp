@@ -5,7 +5,7 @@ import { ProductoService } from './producto.service';
 import { environment } from 'src/environments/environment';
 import { HttpService } from 'src/app/core/services/http.service';
 import { HttpResponse } from '@angular/common/http';
-import { Cita } from '@home/shared/models/cita';
+import { Cita } from '@shared/models/cita';
 
 describe('ProductoService', () => {
   let httpMock: HttpTestingController;

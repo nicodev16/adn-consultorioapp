@@ -2,7 +2,7 @@ import { HttpResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
-import { Medico } from '@producto/shared/model/medico';
+import { Medico } from '@shared/models/medico';
 import { environment } from 'src/environments/environment';
 
 import { MedicoService } from './medico.service';

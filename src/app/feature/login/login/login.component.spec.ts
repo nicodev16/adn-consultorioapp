@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpService } from '@core/services/http.service';
 import { Observable, of, throwError } from 'rxjs';
-import { Token } from '../shared/models/token';
-import { LoginService } from '../shared/services/login/login.service';
+import { Token } from '../../../shared/models/token';
+import { LoginService } from '../../../core/services/login.service';
 
 import { LoginComponent } from './login.component';
 

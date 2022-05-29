@@ -1,4 +1,4 @@
-import { Medico } from '@producto/shared/model/medico';
+import { Medico } from './medico';
 
 export class Cita {
   id: number;

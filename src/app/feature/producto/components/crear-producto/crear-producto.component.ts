@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../shared/service/producto.service';
-import { Observable, Observer } from 'rxjs';
-import { Medico } from '@producto/shared/model/medico';
-import { Cita } from '@home/shared/models/cita';
+import { Observable, Subscription } from 'rxjs';
+import { Medico } from '@shared/models/medico';
+import { Cita } from '@shared/models/cita';
 import { ControlBase } from '@core/components/form/shared/models/control-base';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-producto',
@@ -13,7 +14,7 @@ import { ControlBase } from '@core/components/form/shared/models/control-base';
 export class CrearProductoComponent implements OnInit {
   listMedicos: Observable<Medico[]>;
   controlsCita: Observable<ControlBase<string>[]>;
-  newCita: Cita;
+  citaSubscription: Subscription;
   constructor(protected productoServices: ProductoService) {}
 
   ngOnInit() {
@@ -33,21 +34,32 @@ export class CrearProductoComponent implements OnInit {
           alert('No se pueden realizar citas los fines de semana!');
         } else {
           newCita.id = +newCita.id;
-          const observerCita: Observer<boolean> = {
-            next: (value: boolean) => {
-              console.log(value);
-            },
-            error: (error: any) => {
-              console.log(error);
-            },
-            complete: () => {
-              console.log('complete');
-            },
-          };
-          console.log('entro aca');
-          this.productoServices.guardar(newCita).subscribe(observerCita);
+          this.productoServices.guardar(newCita).subscribe(
+            (cita: Cita) => this.notificacionCreacion(cita),
+            (error) => this.manageError(error)
+          );
         }
       });
+  }
+
+  notificacionCreacion(cita: Cita) {
+    debugger;
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: `La cita con id ${cita.id} fue creada exitosamente`,
+      showConfirmButton: false
+    });
+  }
+
+  manageError(error) {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: error.error.message,
+      showConfirmButton: false,
+      timer: 5000
+    });
   }
 
   validarFecha(citas: Cita[], newCita: Cita): boolean {

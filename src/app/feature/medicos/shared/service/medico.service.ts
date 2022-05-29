@@ -4,7 +4,7 @@ import { DateTimeControl } from '@core/components/form/shared/models/datetime';
 import { SelectControl } from '@core/components/form/shared/models/select';
 import { TextBoxControl } from '@core/components/form/shared/models/textbox';
 import { HttpService } from '@core/services/http.service';
-import { Medico } from '@producto/shared/model/medico';
+import { Medico } from '../../../../shared/models/medico';
 import { of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -19,7 +19,7 @@ export class MedicoService {
   }
 
   public guardarMedico(medico: Medico) {
-    return this.http.doPost<Medico, boolean>(`${environment.endpoint}/medicos`, medico ,
+    return this.http.doPost<Medico, Medico>(`${environment.endpoint}/medicos`, medico ,
                                                                       this.http.optsName('crear/actualizar medico'));
   }
 
@@ -28,11 +28,15 @@ export class MedicoService {
                                                                         this.http.optsName('eliminar medico'));
   }
 
+  public getMedicosPaginate(page: number) {
+    return this.http.doGet<Medico[]>(`${environment.endpoint}/medicos?_page=${page}&_limit=10`,
+                                                                          this.http.optsName('Consultar medicos paginados'));
+  }
 
   public getControlsMedico() {
     const controls: ControlBase<string>[] = [
       new TextBoxControl({
-        key: 'idMedico',
+        key: 'id',
         label: 'Id medico',
         required: true,
         type: 'text',
@@ -60,7 +64,7 @@ export class MedicoService {
         order: 4,
       }),
       new SelectControl({
-        key: 'especialidadMedico',
+        key: 'especialidad',
         label: 'Especialidad',
         required: true,
         order: 5,

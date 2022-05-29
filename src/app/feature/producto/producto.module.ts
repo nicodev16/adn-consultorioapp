@@ -8,6 +8,7 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { SharedModule } from '@shared/shared.module';
 import { ProductoService } from './shared/service/producto.service';
 import { CoreModule } from '@core/core.module';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CoreModule } from '@core/core.module';
   imports: [
     ProductoRoutingModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    NgbPaginationModule
   ],
   providers: [ProductoService]
 })

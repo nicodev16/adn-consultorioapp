@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ProductoService } from '../../shared/service/producto.service';
 import { HttpService } from 'src/app/core/services/http.service';
-import { Cita } from '@home/shared/models/cita';
+import { Cita } from '@shared/models/cita';
 
 describe('ListarProductoComponent', () => {
   let component: ListarProductoComponent;

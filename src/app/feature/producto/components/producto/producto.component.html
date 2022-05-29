@@ -1,5 +1,20 @@
-<nav>
-  <a id="linkCrearProducto" routerLink="./crear" routerLinkActive="active">Crear Cita</a>
-  <a id="linkListarProducto" routerLink="./listar" routerLinkActive="active">listar Citas</a>
-</nav>
-<router-outlet></router-outlet>
+
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link" id="crear-cita" routerLink="./crear" routerLinkActive="active">Crear Cita</button>
+          <button class="nav-link" id="listar-citas" routerLink="./listar" routerLinkActive="active">listar Citas</button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

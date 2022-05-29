@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
-import { Medico } from '@producto/shared/model/medico';
+import { Medico } from '@shared/models/medico';
 import { Observable, of, throwError } from 'rxjs';
 import { MedicoService } from '../../shared/service/medico.service';
 

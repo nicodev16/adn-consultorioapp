@@ -18,7 +18,7 @@ describe('workspace-project Producto', () => {
         const DESCRIPCION_PRODUCTO = 'Producto de pruebas';
 
         page.navigateTo();
-        navBar.clickBotonProductos();
+        navBar.clickBotonCitas();
         producto.clickBotonCrearProductos();
         producto.ingresarId(ID_PRODUCTO);
         producto.ingresarDescripcion(DESCRIPCION_PRODUCTO);
@@ -29,7 +29,7 @@ describe('workspace-project Producto', () => {
 
     xit('Deberia listar productos', () => {
         page.navigateTo();
-        navBar.clickBotonProductos();
+        navBar.clickBotonCitas();
         producto.clickBotonListarProductos();
 
         expect(4).toBe(producto.contarProductos());

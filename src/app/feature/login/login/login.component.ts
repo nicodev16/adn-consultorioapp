@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, Observer } from 'rxjs';
-import { Token } from '../shared/models/token';
-import { LoginService } from '../shared/services/login/login.service';
+import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
+import { Token } from '../../../shared/models/token';
+import { LoginService } from '../../../core/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,7 @@ import { LoginService } from '../shared/services/login/login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  isLogin: Observable<Token>;
-  loginObserver: Observer<Token>;
+  isLogin: Subscription;
 
   constructor(private loginService: LoginService, public route: Router) {}
 
@@ -22,16 +22,18 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.isLogin = this.loginService.login(this.loginForm.value);
-    this.loginObserver = {
-      next: (value: Token): void => this.navigateHome(value),
-      error: (error: any): void => this.manageError(error),
-      complete: (): void => this.completeSubscribe(),
-    };
-    this.isLogin.subscribe(this.loginObserver);
+    this.isLogin = this.loginService.login(this.loginForm.value)
+        .subscribe((value: Token) => this.navigateHome(value), (error) => this.manageError(error));
   }
 
   navigateRoute() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Ingreso exitoso',
+      showConfirmButton: false,
+      timer: 1000,
+    });
     this.route.navigate(['/home']);
   }
 
@@ -41,12 +43,13 @@ export class LoginComponent implements OnInit {
     this.navigateRoute();
   }
 
-  public manageError(error: any): void {
-    console.log(error);
-  }
-
-  public completeSubscribe(): void {
-    console.log('completo el subscribe');
+  public manageError(error): void {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: error.error,
+      timer: 1000,
+    });
   }
 
   private crearFormularioLogin() {

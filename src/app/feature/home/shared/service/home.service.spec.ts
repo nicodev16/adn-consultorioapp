@@ -2,7 +2,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { HttpService } from '@core/services/http.service';
-import { Cita } from '../models/cita';
+import { Cita } from '../../../../shared/models/cita';
 import { HomeService } from './home.service';
 import { environment } from 'src/environments/environment';
 

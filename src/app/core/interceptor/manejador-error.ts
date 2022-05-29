@@ -27,7 +27,7 @@ export class ManejadorError implements ErrorHandler {
   private imprimirErrorConsola(mensaje): void {
     const respuesta = {
       fecha: new Date().toLocaleString(),
-      path: window.location.href,
+      // path: window.location.href,
       mensaje,
     };
     if (!environment.production) {

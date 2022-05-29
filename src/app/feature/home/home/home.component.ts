@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cita } from '@home/shared/models/cita';
+import { Cita } from '@shared/models/cita';
 import { HomeService } from '@home/shared/service/home.service';
 import { Observable } from 'rxjs';
 

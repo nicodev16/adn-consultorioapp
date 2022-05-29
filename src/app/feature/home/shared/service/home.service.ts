@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core/services/http.service';
 import { environment } from 'src/environments/environment';
-import { Cita } from '../models/cita';
+import { Cita } from '../../../../shared/models/cita';
 
 @Injectable()
 export class HomeService {

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from './shared/services/login/login.service';
+import { LoginService } from '../../core/services/login.service';
 
 
 
